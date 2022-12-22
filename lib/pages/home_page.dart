@@ -7,6 +7,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:weather_app/repository/get_informatioon_repository.dart';
 
 import '../model/university_model.dart';
+import 'add_country.dart';
 
 class HomePage extends StatefulWidget {
   final String country;
@@ -75,7 +76,15 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             );
-          })
+          }),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.red,
+        onPressed: () {
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: (_) => AddCountry()));
+        },
+        child: const Icon(Icons.add),
+      ),
     );
   }
 }
